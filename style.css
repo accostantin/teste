@@ -6,7 +6,11 @@
     background-color: rgb(0, 0, 0); 
     display: grid;
     grid-template-columns: repeat(3,33.3%);
-    grid-template-rows: repeat(3,33.3%);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+    'header header header'
+    'main main main'
+    'footer footer footer';
     gap: 0px;
 }
 
@@ -23,10 +27,7 @@ header{
 height: 350px;
 display: grid;
 background-image: url(img/01-qual-e-a-flor-de-e-assim-que-acaba.avif);
-grid-row-start: 1;
-grid-row-end: 1;
-grid-column-start: 1;
-grid-column-end: 4;
+grid-area: header;
 }
 
 h2{ 
@@ -43,10 +44,7 @@ h2{
 main{
 margin-top: 20px;
 height: 700px;
-grid-column-start: 1;
-grid-row-start: 2;
-grid-column-end: 4;
-grid-row-end: 2;
+grid-area: main;
 background-image: url(./img/hq720.jpg);
 background-size: cover;
 }
@@ -56,5 +54,21 @@ display: grid;
 height: 300px;
 grid-template-rows: repeat(1,100%);
 grid-template-columns: repeat(3,33,3%);
+grid-template-areas: 'left-footer center-footer right-footer';
+grid-area: footer;
+}
 
+.left-footer {
+background-color: aqua;
+grid-area: left-footer;
+}
 
+.center-footer{
+background-color: blueviolet;
+grid-area: center-footer;
+}
+
+.right-footer{
+background-color: brown;
+grid-area: right-footer;
+}
